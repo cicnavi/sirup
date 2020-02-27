@@ -1,17 +1,40 @@
 <template>
   <div class="row">
     <div class="col">
-      <h4 class="mb-3">{{ syrup.name }}</h4>
+      <h4 class="mb-3 pl-0">{{ syrup.name }}</h4>
       <p>
-        Sadržaj lijeka (mg u 1 ml): {{ syrup.medicineContent }}
+        Sadržaj lijeka u 1 ml: {{ syrup.medicineContent }} mg
         <br>
-        Manja doza (mg po Kg): {{ syrup.dosage.small }}
+        Manja doza: {{ syrup.dosage.small }} mg po Kg
         <br>
-        Veća doza (mg po Kg): {{ syrup.dosage.large }}
+        Veća doza: {{ syrup.dosage.large }} mg po Kg
       </p>
       <p>
-        TODO mivanci izračun
+        Potrebna doza za danu kilažu u mg:
       </p>
+      <ul>
+        <li>
+          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} kg):
+          {{ syrup.dosage.small * kilograms }} mg
+        </li>
+        <li>
+          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} kg):
+          {{ syrup.dosage.large * kilograms }} mg
+        </li>
+      </ul>
+      <p>
+        Potrebna doza za danu kilažu u ml:
+      </p>
+      <ul>
+        <li>
+          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} kg / {{ syrup.medicineContent }}):
+          {{ Math.round(syrup.dosage.small * kilograms / syrup.medicineContent * 100) / 100 }}  ml
+        </li>
+        <li>
+          <strong>manja:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} kg / {{ syrup.medicineContent }}):
+          {{ Math.round(syrup.dosage.large * kilograms / syrup.medicineContent * 100) / 100 }}  ml
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -23,10 +46,11 @@
             kilograms: {
                 required: true,
                 default: 0,
-                validator: function (value) {
-                    const kilograms = parseFloat(value);
-                    return kilograms > 0 && kilograms < 50;
-                }
+ //               validator: function (value) {
+                    //const kilograms = parseFloat(value);
+                    //return kilograms > 0 && kilograms < 50;
+        //            return true;
+   //             }
             },
             syrup: Object
         }

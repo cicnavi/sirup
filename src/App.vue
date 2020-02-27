@@ -18,14 +18,14 @@
 
         <div class="row">
           <div class="col"></div>
-          <div class="col-2">
-            <label for="firstName" class="lead">Kilaža</label>
+          <div class="col-2 text-center">
+            <label class="lead">Kilaža</label>
             <input type="number"
-                   min="3"
+                   min="0"
                    max="100"
                    step="0.1"
                    class="form-control form-control-lg"
-                   v-model="kilograms"
+                   v-model="validatedKilograms"
                    placeholder="Unesite kilažu (broj)"
                    required
                    style="text-align: center;">
@@ -33,20 +33,21 @@
           <div class="col"></div>
         </div>
 
-        <div class="m-4 text-warning">
-          TODO mivanci prikaz greške
+        <div class="m-4 text-warning text-center"
+          v-if="error">
+          {{ error }}
         </div>
         
         <div class="row mt-3">
           <div class="col">
             <Calculator
-                v-bind:kilograms="kilograms"
+                v-bind:kilograms="validatedKilograms"
                 v-bind:syrup="syrups.paracetamol"
             ></Calculator>
           </div>
           <div class="col">
             <Calculator
-                v-bind:kilograms="kilograms"
+                v-bind:kilograms="validatedKilograms"
                 v-bind:syrup="syrups.ibuprofen"
             ></Calculator>
           </div>
@@ -96,6 +97,7 @@
         name: 'Sirup',
         data: function () {
             return {
+                error: null,
                 kilograms: 13.5,
                 syrups: {
                     paracetamol: {
@@ -119,6 +121,34 @@
         },
         components: {
             Calculator
+        },
+        computed: {
+            validatedKilograms: {
+                // getter
+                get: function () {
+                    return this.kilograms;
+                },
+                // setter
+                set: function (value) {
+                    // TODO regex validation
+                   const errorMessage = 'Vrijednost kilograma nije ispravna. Za decimalne brojeve koristiti točku.';
+                    if (value.length > 4) {
+                      this.error = errorMessage;
+                      this.kilograms = 0;
+                      return;
+                    }
+
+                    const kilograms = parseFloat(value);
+                    if (kilograms < 0 || kilograms > 50) {
+                        this.kilograms = 0;
+                        this.error = 'Vrijednost kilograma nije ispravna';
+                        return;
+                    } else {
+                        this.error = null;
+                        this.kilograms = value;
+                    }
+                }
+            }
         }
     }
 </script>
@@ -128,7 +158,6 @@
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
     margin-top: 10px;
   }
