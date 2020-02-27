@@ -25,9 +25,8 @@
                    max="100"
                    step="0.1"
                    class="form-control form-control-lg"
-                   id="kilaza"
+                   v-model="kilograms"
                    placeholder="Unesite kilažu (broj)"
-                   value="13.5"
                    required
                    style="text-align: center;">
           </div>
@@ -37,16 +36,22 @@
         <div class="m-4 text-warning">
           TODO mivanci prikaz greške
         </div>
-
+        
         <div class="row mt-3">
           <div class="col">
-            <h4 class="mb-3">Paracetamol</h4>
+            <Calculator
+                v-bind:kilograms="kilograms"
+                v-bind:syrup="syrups.paracetamol"
+            ></Calculator>
           </div>
-
           <div class="col">
-            <h4>Ibuprofen</h4>
+            <Calculator
+                v-bind:kilograms="kilograms"
+                v-bind:syrup="syrups.ibuprofen"
+            ></Calculator>
           </div>
         </div>
+
 
         <div class="row">
           <div class="col">
@@ -71,6 +76,11 @@
               Ikone izradila <a href="https://www.flaticon.com/authors/nikita-golubev"
                                 title="Nikita Golubev">Nikita Golubev</a>, dostupno na
               <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+              <br>
+
+              Favicon generiran pomoću <a href="https://www.favicon-generator.org/">
+              https://www.favicon-generator.org/</a>
             </small>
           </p>
         </footer>
@@ -80,10 +90,36 @@
 </template>
 
 <script>
+    import Calculator from "./components/Calculator";
 
     export default {
         name: 'Sirup',
-        components: {}
+        data: function () {
+            return {
+                kilograms: 13.5,
+                syrups: {
+                    paracetamol: {
+                        name: 'Paracetamol',
+                        medicineContent: 24, // 24 mg of medicine in 1 ml
+                        dosage: {
+                            small: 10, // 10 mg of medicine per 1 Kg
+                            large: 15 // 15 mg of medicine per 1 Kg
+                        }
+                    },
+                    ibuprofen: {
+                        name: 'Ibuprofen',
+                        medicineContent: 20, // 20 mg of medicine in 1 ml
+                        dosage: {
+                            small: 5, // 5 mg of medicine per 1 Kg
+                            large: 10 // 10 mg of medicine per 1 Kg
+                        },
+                    }
+                }
+            }
+        },
+        components: {
+            Calculator
+        }
     }
 </script>
 
