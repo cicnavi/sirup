@@ -31,7 +31,7 @@
           {{ Math.round(syrup.dosage.small * kilograms / syrup.medicineContent * 100) / 100 }}  ml
         </li>
         <li>
-          <strong>manja:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} kg / {{ syrup.medicineContent }}):
+          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} kg / {{ syrup.medicineContent }}):
           {{ Math.round(syrup.dosage.large * kilograms / syrup.medicineContent * 100) / 100 }}  ml
         </li>
       </ul>

@@ -53,38 +53,11 @@
           </div>
         </div>
 
+        <Information></Information>
 
-        <div class="row">
-          <div class="col">
-            TODO mivanci općenite informacije o temperaturi
-          </div>
-        </div>
+        <Disclaimer></Disclaimer>
 
-        <div class="row">
-          <div class="col">
-            <p>
-              TODO mivanci odricanje od odgovornosti
-            </p>
-          </div>
-        </div>
-
-        <footer class="my-5 pt-5 text-muted text-center text-small">
-          <p class="mb-1">
-            &copy; Sirup
-          </p>
-          <p>
-            <small>
-              Ikone izradila <a href="https://www.flaticon.com/authors/nikita-golubev"
-                                title="Nikita Golubev">Nikita Golubev</a>, dostupno na
-              <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-
-              <br>
-
-              Favicon generiran pomoću <a href="https://www.favicon-generator.org/">
-              https://www.favicon-generator.org/</a>
-            </small>
-          </p>
-        </footer>
+        <Footer></Footer>
       </div>
     </div>
   </div>
@@ -92,6 +65,9 @@
 
 <script>
     import Calculator from "./components/Calculator";
+    import Information from "./components/Information";
+    import Disclaimer from "./components/Disclaimer";
+    import Footer from "./components/Footer";
 
     export default {
         name: 'Sirup',
@@ -120,6 +96,9 @@
             }
         },
         components: {
+            Disclaimer,
+            Information,
+            Footer,
             Calculator
         },
         computed: {
