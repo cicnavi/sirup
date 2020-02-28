@@ -11,7 +11,7 @@
           <h2>Sirup</h2>
           <p class="lead">
             <small>
-              Izračun doze sirupa (ml) prema kilaži djeteta
+              Izračun doze sirupa u mg i ml prema kilaži djeteta
             </small>
           </p>
         </div>
@@ -19,14 +19,14 @@
         <div class="row">
           <div class="col"></div>
           <div class="col-2 text-center">
-            <label class="lead">Kilaža</label>
+            <label class="lead">Kilaža (Kg)</label>
             <input type="number"
                    min="0"
                    max="100"
                    step="0.1"
                    class="form-control form-control-lg"
                    v-model="validatedKilograms"
-                   placeholder="Unesite kilažu (broj)"
+                   placeholder="unesite broj"
                    required
                    style="text-align: center;">
           </div>

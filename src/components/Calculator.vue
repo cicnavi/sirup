@@ -14,11 +14,11 @@
       </p>
       <ul>
         <li>
-          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} kg):
+          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} Kg):
           {{ syrup.dosage.small * kilograms }} mg
         </li>
         <li>
-          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} kg):
+          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} Kg):
           {{ syrup.dosage.large * kilograms }} mg
         </li>
       </ul>
@@ -27,11 +27,11 @@
       </p>
       <ul>
         <li>
-          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} kg / {{ syrup.medicineContent }}):
+          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
           {{ Math.round(syrup.dosage.small * kilograms / syrup.medicineContent * 100) / 100 }}  ml
         </li>
         <li>
-          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} kg / {{ syrup.medicineContent }}):
+          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
           {{ Math.round(syrup.dosage.large * kilograms / syrup.medicineContent * 100) / 100 }}  ml
         </li>
       </ul>
