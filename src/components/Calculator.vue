@@ -1,38 +1,40 @@
 <template>
-  <div class="row">
-    <div class="col">
+  <div class="card">
+    <div class="card-body">
       <h4 class="mb-3 pl-0">{{ syrup.name }}</h4>
-      <p>
-        Sadržaj lijeka u 1 ml: {{ syrup.medicineContent }} mg
+      <p class="text-muted">
+        Sadržaj lijeka u 1 ml sirupa: {{ syrup.medicineContent }} mg
         <br>
-        Manja doza: {{ syrup.dosage.small }} mg po Kg
+        Manja doza lijeka: {{ syrup.dosage.small.ammount }} mg po Kg
+        (do {{ syrup.dosage.small.dailyDosages }}x u 24 h)
         <br>
-        Veća doza: {{ syrup.dosage.large }} mg po Kg
+        Veća doza lijeka: {{ syrup.dosage.large.ammount }} mg po Kg
+        (do {{ syrup.dosage.large.dailyDosages }}x u 24 h)
       </p>
       <p>
-        Potrebna doza za danu kilažu u mg:
+        <strong>Potrebna doza lijeka za danu kilažu, u mg</strong>
       </p>
-      <ul>
+      <ul style="list-style: none;">
         <li>
-          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} Kg):
-          {{ syrup.dosage.small * kilograms }} mg
+          <strong>manja:</strong> ({{ syrup.dosage.small.ammount }} mg * {{ kilograms }} Kg):
+          {{ syrup.dosage.small.ammount * kilograms }} mg
         </li>
         <li>
-          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} Kg):
-          {{ syrup.dosage.large * kilograms }} mg
+          <strong>veća:</strong> ({{ syrup.dosage.large.ammount }} mg * {{ kilograms }} Kg):
+          {{ syrup.dosage.large.ammount * kilograms }} mg
         </li>
       </ul>
       <p>
-        Potrebna doza za danu kilažu u ml:
+        <strong>Potrebna doza sirupa za danu kilažu, u ml</strong>
       </p>
-      <ul>
+      <ul style="list-style: none;">
         <li>
-          <strong>manja:</strong> ({{ syrup.dosage.small }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
-          {{ Math.round(syrup.dosage.small * kilograms / syrup.medicineContent * 100) / 100 }}  ml
+          <strong>manja:</strong> ({{ syrup.dosage.small.ammount }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
+          {{ Math.round(syrup.dosage.small.ammount * kilograms / syrup.medicineContent * 100) / 100 }}  ml
         </li>
         <li>
-          <strong>veća:</strong> ({{ syrup.dosage.large }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
-          {{ Math.round(syrup.dosage.large * kilograms / syrup.medicineContent * 100) / 100 }}  ml
+          <strong>veća:</strong> ({{ syrup.dosage.large.ammount }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
+          {{ Math.round(syrup.dosage.large.ammount * kilograms / syrup.medicineContent * 100) / 100 }}  ml
         </li>
       </ul>
     </div>
