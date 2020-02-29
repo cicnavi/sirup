@@ -13,7 +13,7 @@
               <h2>Sirup</h2>
               <p class="lead">
                 <small>
-                  Izračun doze sirupa u mg i ml prema kilaži djeteta
+                  Izračun doze sirupa prema kilaži djeteta
                 </small>
               </p>
             </div>
@@ -47,13 +47,13 @@
         </div>
         
         <div class="row mt-3">
-          <div class="col-md-12 col-lg-6">
+          <div class="col-sm-12 col-md-6">
             <Calculator
                 v-bind:kilograms="validatedKilograms"
                 v-bind:syrup="syrups.paracetamol"
             ></Calculator>
           </div>
-          <div class="col-md-12 col-lg-6">
+          <div class="col-sm-12 col-md-6">
             <Calculator
                 v-bind:kilograms="validatedKilograms"
                 v-bind:syrup="syrups.ibuprofen"
@@ -87,11 +87,11 @@
                 medicineContent: 24, // 24 mg of medicine in 1 ml
                 dosage: {
                   small: {
-                    ammount: 10, // 10 mg of medicine per 1 Kg
+                    amount: 10, // 10 mg of medicine per 1 Kg
                     dailyDosages: 6
                   },
                   large: {
-                    ammount: 15, // 15 mg of medicine per 1 Kg
+                    amount: 15, // 15 mg of medicine per 1 Kg
                     dailyDosages: 4
                   }
                 }
@@ -101,11 +101,11 @@
                 medicineContent: 20, // 20 mg of medicine in 1 ml
                 dosage: {
                   small: {
-                    ammount: 5, // 5 mg of medicine per 1 Kg
+                    amount: 5, // 5 mg of medicine per 1 Kg
                     dailyDosages: 3
                   },
                   large: {
-                    ammount: 10, // 10 mg of medicine per 1 Kg
+                    amount: 10, // 10 mg of medicine per 1 Kg
                     dailyDosages: 3
                   },
                 }
