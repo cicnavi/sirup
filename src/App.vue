@@ -80,7 +80,7 @@
         data: function () {
           return {
             error: null,
-            kilograms: 13.5,
+            kilograms: '',
             syrups: {
               paracetamol: {
                 name: 'Paracetamol',
@@ -119,6 +119,12 @@
             Footer,
             Calculator
         },
+        created: function() {
+          let previousKilogramsEntry = localStorage.getItem('kilograms');
+          if (previousKilogramsEntry) {
+            this.validatedKilograms = previousKilogramsEntry;
+          }
+        },
         computed: {
             validatedKilograms: {
                 // getter
@@ -128,7 +134,7 @@
                 // setter
                 set: function (value) {
                     // TODO regex validation
-                   const errorMessage = 'Vrijednost kilograma nije ispravna. ' +
+                   const errorMessage = 'Unesite broj. ' +
                     'Za decimalne brojeve koristiti točku. Izračun je do 30 Kg.';
                                       
                     if (value.length > 4) {
@@ -146,6 +152,7 @@
                     } else {
                         this.error = null;
                         this.kilograms = value;
+                        localStorage.setItem('kilograms', value);
                     }
                 }
             }
