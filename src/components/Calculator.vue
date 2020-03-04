@@ -4,9 +4,14 @@
       <h4 class="mb-3 pl-0">{{ syrup.name }}</h4>
 
       <p>
-        manja doza: {{ dosageMlSmall }} ml
+        manja doza: {{ dosageMlSmall }} ml *
         <br>
-        veća doza: {{ dosageMlLarge }} ml
+        veća doza: {{ dosageMlLarge }} ml **
+      </p>
+      <p class="text-left small">
+        * do {{ syrup.dosage.small.dailyDosages }}x u 24 h
+        <br>
+        **  za tvrdokornu vrućicu, do {{ syrup.dosage.large.dailyDosages }}x u 24 h
       </p>
       <p>
         <button class="btn btn-light" 

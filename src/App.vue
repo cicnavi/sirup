@@ -13,7 +13,7 @@
               <h2>Sirup</h2>
               <p class="lead">
                 <small>
-                  Izračun doze sirupa prema kilaži djeteta
+                  Izračun doze sirupa protiv temperature (antipiretika) u djece, prema kilaži djeteta
                 </small>
               </p>
             </div>
