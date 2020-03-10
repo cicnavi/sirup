@@ -2,11 +2,13 @@
   <div class="card">
     <div class="card-body">
       <h4 class="mb-3 pl-0">{{ syrup.name }}</h4>
-
       <p>
-        manja doza: {{ dosageMlSmall }} ml *
+        <small>(za {{ syrup.name }} koji ima {{ syrup.medicineContent }} mg lijeka u 1 ml sirupa)</small>
+      </p>
+      <p>
+        manja doza sirupa: {{ dosageMlSmall }} ml *
         <br>
-        veća doza: {{ dosageMlLarge }} ml **
+        veća doza sirupa: {{ dosageMlLarge }} ml **
       </p>
       <p class="text-left small">
         * do {{ syrup.dosage.small.dailyDosages }}x u 24 h
@@ -38,11 +40,11 @@
         </p>
         <ul style="list-style: none;">
           <li>
-            <strong>manja:</strong> ({{ syrup.dosage.small.amount }} mg * {{ kilograms }} Kg):
+            manja: ({{ syrup.dosage.small.amount }} mg * {{ kilograms }} Kg):
             {{ dosageMgSmall }} mg
           </li>
           <li>
-            <strong>veća:</strong> ({{ syrup.dosage.large.amount }} mg * {{ kilograms }} Kg):
+            veća: ({{ syrup.dosage.large.amount }} mg * {{ kilograms }} Kg):
             {{ dosageMgLarge }} mg
           </li>
         </ul>
@@ -51,11 +53,11 @@
         </p>
         <ul style="list-style: none;">
           <li>
-            <strong>manja:</strong> ({{ syrup.dosage.small.amount }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
+            manja: ({{ syrup.dosage.small.amount }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
             {{ dosageMlSmall }}  ml
           </li>
           <li>
-            <strong>veća:</strong> ({{ syrup.dosage.large.amount }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
+            veća: ({{ syrup.dosage.large.amount }} mg * {{ kilograms }} Kg / {{ syrup.medicineContent }} mg):
             {{ dosageMlLarge }}  ml
           </li>
         </ul>
