@@ -8,18 +8,18 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "cookieconsent": "^3.1.1",
-    "core-js": "^3.6.5",
+    "core-js": "^3.8.0",
     "jquery": "^3.5.0",
     "popper.js": "^1.16.1",
     "vue": "^2.6.12",
-    "vue-gtag": "^1.9.1"
+    "vue-gtag": "^1.10.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.6",
-    "@vue/cli-plugin-eslint": "^4.5.6",
-    "@vue/cli-service": "^4.5.6",
+    "@vue/cli-plugin-babel": "^4.5.9",
+    "@vue/cli-plugin-eslint": "^4.5.9",
+    "@vue/cli-service": "^4.5.9",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
